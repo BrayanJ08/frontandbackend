@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmnls:th="http://www.thymealeaf.org">
+<head th:fragment="head">
+	<meta charset="utf-8">
+	<title>Gestión de Contactos</title>
+	<link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+	<header th:fragment="header">
+		<nav>
+			<div>
+				<ul>
+    				<li><a th:href="@{/}">Inicio</a></li>
+    				<li><a th:href="@{vistas/contactos/}">Listado de Contactos</a></li>
+    				<li><a th:href="@{vistas/contactos/create}">Registro de Contactos</a></li>
+				</ul>
+  			</div>
+		</nav>
+	</header>
+	
+	<!--  CONTENIDO -->
+	<article th:fragment="article">
+		<div>
+  			
+		</div>
+	</article>
+	
+	
+	<footer th:fragment="footer">
+		<div>
+			<p>Todos los derechos reservados &copy; 2024</p>
+		</div>
+		
+	</footer>
+</body>
+</html>

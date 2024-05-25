@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmnls:th="http://www.thymealeaf.org">
+<head th:replace="/plantilla/template::head">
+</head>
+<body>
+	<header th:replace="/plantilla/template::header"></header>
+	
+	<!--  CONTENIDO -->
+	<article th:replace="/plantilla/template::article"></article>
+	<div>
+
+  		<h3>Contáctos Almacenados</h3>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Código</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Teléfono</th>
+					<th scope="col">Email</th>
+					<!-- Agregar las columnas para los botones editar y eliminar -->
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cont:${contactos}">  
+					<th scope="row" th:text="${cont.idContacto}" ></th> 
+					<td th:text="${cont.nomContacto}"></td>
+					<td th:text="${cont.apeContacto}" ></td>
+					<td th:text="${cont.telefono}" ></td>
+					<td th:text="${cont.email}" ></td>
+					<td>
+						<a th:href="@{/vistas/contactos/edit/}+${cont.idContacto}" th:text="Editar" title="Editar Registro"></a>
+					</td>
+					<td>
+						<a  th:href="@{/vistas/contactos/delete/}+${cont.idContacto}" th:text="Eliminar" title="Eliminar Registro"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<footer th:replace="/plantilla/template::footer"></footer>
+	
+</body>
+</html>

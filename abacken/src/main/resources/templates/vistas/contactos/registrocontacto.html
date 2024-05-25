@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmnls:th="http://www.thymealeaf.org">
+<head th:replace="/plantilla/template::head">
+</head>
+<body>
+	<header th:replace="/plantilla/template::header"></header>
+	
+	<!--  CONTENIDO -->
+	<article th:replace="/plantilla/template::article" ></article>
+	
+	<!-- CREAR EL FORMULARIO PARA INGRESAR LOS DATOS -->
+	<div>
+		<form th:action="@{/vistas/contactos/save}" th:object="${contacto}" method="post">  
+			<div>
+				<label for="codigo">Identificación:</label> <br>
+				<input type="text" id="codigo" th:field="*{idContacto}" placeholder="Ingrese Documento de Identidad"> 				
+			</div>
+			<div>
+				<label for="nombres">Nombres del contácto:</label><br> 
+				<input type="text" id="nombres" th:field="*{nomContacto}" placeholder="Ingrese los nombres"> 
+			</div>
+			<div>
+				<label for="apellidos">Apellidos del Contácto:</label> <br>
+				<input type="text" id="apellidos" th:field="*{apeContacto}" placeholder="Ingrese los apellidos"> 
+			</div>
+			<div>
+				<label for="telefono">Teléfono del Contacto:</label> <br>
+				<input type="text" id="telefono" th:field="*{telefono}" placeholder="Ingrese el telefono">
+			</div>
+			<div>
+				<label for="email">Email del Contacto:</label> <br>
+				<input type="text" id="email" th:field="*{email}" placeholder="Ingrese el telefono">
+			</div>
+		    <br />
+			<div>
+				<input type="submit" value="Guardar" id="submit" name="submit"/>
+			</div>
+		</form>
+	</div>
+	
+	<!-- CIERRE DEL FORMULARIO -->
+	
+	<footer th:replace="/plantilla/template::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Aviones</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Aviones</h1>
+        <form id="avionForm">
+            <input type="hidden" id="avionId">
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="fabricante">Fabricante:</label>
+                <input type="text" id="fabricante" required>
+            </div>
+            <div class="form-group">
+                <label for="asientos">Asientos:</label>
+                <input type="number" id="asientos" required>
+            </div>
+            <div class="form-group">
+                <label for="velocidad">Velocidad:</label>
+                <input type="number" id="velocidad" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-danger">Borrar</button>
+            </div>
+        </form>
+        <div id="message"></div>
+        <table id="avionTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Fabricante</th>
+                    <th>Asientos</th>
+                    <th>Velocidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
